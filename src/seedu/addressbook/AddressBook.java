@@ -133,6 +133,8 @@ public class AddressBook {
     private static final String COMMAND_EXIT_DESC = "Exits the program.";
     private static final String COMMAND_EXIT_EXAMPLE = COMMAND_EXIT_WORD;
 
+    private static final String COMMAND_HELLO_WORD = "hello";
+
     private static final String DIVIDER = "===================================================";
 
 
@@ -383,6 +385,8 @@ public class AddressBook {
             return getUsageInfoForAllCommands();
         case COMMAND_EXIT_WORD:
             executeExitProgramRequest();
+        case COMMAND_HELLO_WORD:
+            executeHello();
         default:
             return getMessageForInvalidCommandInput(commandType, getUsageInfoForAllCommands());
         }
@@ -406,6 +410,14 @@ public class AddressBook {
      */
     private static String getMessageForInvalidCommandInput(String userCommand, String correctUsageInfo) {
         return String.format(MESSAGE_INVALID_COMMAND_FORMAT, userCommand, correctUsageInfo);
+    }
+
+    /**
+     * Prints out "Hello"
+     */
+    private static int executeHello(){
+        System.out.println("Hello");
+        return 0;
     }
 
     /**
